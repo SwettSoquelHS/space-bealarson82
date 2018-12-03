@@ -1,3 +1,5 @@
+
+
 class Normal {
   float x;
   float y;
@@ -22,9 +24,6 @@ class Normal {
   }
   
   void show(){
-    background(0);
-    noStroke();
-    
     float newX = map(x / z, 0, 1, 0, width/2);
     float newY = map(y / z, 0, 1, 0, height/2);;
     

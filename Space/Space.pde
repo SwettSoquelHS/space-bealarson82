@@ -1,6 +1,8 @@
 //Declare your variables here
 // so try declaring one Particle first, then instantiate it in setup, and use move and show in draw()
 Normal[] particles = new Normal[1000];
+Jumbo particle1 = new Jumbo();
+Oddball ball = new Oddball();
 float speed;
 
 void setup() {
@@ -10,6 +12,8 @@ void setup() {
   for (int i = 0; i < particles.length; i++) {
     particles[i] = new Normal();
   }
+  particle1 = new Jumbo();
+
 } 
 
 void draw() {
@@ -20,4 +24,7 @@ void draw() {
     particles[i].update();
     particles[i].show();
   }
+  particle1.show();
+
+  
 }
