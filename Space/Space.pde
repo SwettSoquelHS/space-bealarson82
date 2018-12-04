@@ -4,7 +4,7 @@ Oddball ball = new Oddball();
 
 void setup() {
   size(700,700);
-  background(0, 40);
+  background(0);
   noStroke();
   
   for (int i = 0; i < particles.length; i++) {
@@ -16,9 +16,8 @@ void setup() {
 } 
 
 void draw() {
-  fill(0, 50);
-  rect(0,0,width,height);
-  background(0,90);
+  fill(0);
+  background(0);
   translate(width/2,height/2);
   for (int i = 0; i < particles.length; i++) {
     particles[i].update();
