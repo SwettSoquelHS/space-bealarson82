@@ -1,22 +1,17 @@
+
 class Oddball{
-  float x = 100;
-  float y = 100;
-  float angle1 = 0.0;
-
-
-  void Oddball() {
-    x = 100;
-    y = 100;
-    angle1 = 0.0;
+  int xPos;
+  
+  Oddball(){
+    xPos = -300;
   }
-
-  void show(){
-    float dx = mouseX - x;
-    float dy = mouseY - y;
-    angle1 = atan2(dy, dx);  
-    x = mouseX - (cos(angle1));
-    y = mouseY - (sin(angle1));
-
-    ellipse(x, y, 60, 60);
+  
+  void draw(){
+    fill(#0DFA6D);
+    ellipse(xPos, 15,70,70);
+    xPos = xPos+1;
+    if(xPos>width+5){
+      xPos = -5;
+    }    
   }
 }

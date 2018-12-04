@@ -4,40 +4,35 @@ class Normal {
   float x;
   float y;
   float z;
-  float pz;
   
   Normal() {
     x = random(-width/8,width/8);
     y = random(-height/8,height/8);
     z = random(width/8);
-    pz = z;
   }
   
   void update(){
-    z = z - speed;
-    if(z < 1){
-      z = width/8;
-      x = random(-width/8, width/8);
-      y = random(-height/8,height/8);
-      pz = z;
-    }
+    z-=10;
+    if (z <= 0.0)
+      reset();
   }
   
-  void show(){
-    float newX = map(x / z, 0, 1, 0, width/2);
-    float newY = map(y / z, 0, 1, 0, height/2);;
-    
-    float range = map(z,0,width/2,16,0);
-    ellipse(newX,newY,range,range);
-    
-    float prevX = map(x/pz,0,1,0,width/2);
-    float prevY = map(y/pz,0,1,0,height/2);
-    
-    pz = z;
-    
-    stroke(255);
-    line(prevX,prevY,newX,newY);
-    
+  void reset() {
+    x = random(-5000, 5000);
+    y = random(-5000, 5000);
+    z = 2000.0;
   }
-    
+  
+  void draw() {
+    float offsetX = 100.0*(x/z);
+    float offsetY = 100.0*(y/z);
+    float scaleZ = 0.0001*(2000.0-z);
+
+    pushMatrix();
+    translate(offsetX, offsetY);
+    scale(scaleZ);
+    fill(255);
+    ellipse(0,0,40,40);
+    popMatrix();
+  } 
 }
