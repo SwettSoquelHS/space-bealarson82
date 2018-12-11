@@ -1,5 +1,5 @@
 
-class Oddball{
+class Oddball extends Normal{
   int xPos;
   
   Oddball(){
@@ -11,7 +11,7 @@ class Oddball{
     ellipse(xPos, 15,70,70);
     xPos = xPos+1;
     if(xPos>width){
-      xPos = -300;
+      xPos = -350;
     }    
   }
 }

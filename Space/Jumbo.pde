@@ -10,8 +10,8 @@ class Jumbo {
   }
   
   void update(){
-    z-=10;
-    if (z <= 0.0)
+    z-=5;
+    if (z <= .0)
       reset();
   }
   

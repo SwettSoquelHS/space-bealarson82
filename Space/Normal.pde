@@ -1,5 +1,3 @@
-
-
 class Normal {
   float x;
   float y;
@@ -12,14 +10,14 @@ class Normal {
   }
   
   void update(){
-    z-=10;
+    z-=5;
     if (z <= 0.0)
       reset();
   }
   
   void reset() {
-    x = random(-5000, 5000);
-    y = random(-5000, 5000);
+    x = random(-5000,5000);
+    y = random(-5000,5000);
     z = 2000.0;
   }
   
